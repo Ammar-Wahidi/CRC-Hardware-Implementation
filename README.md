@@ -55,8 +55,11 @@ divisor = [1 1 0 1 0 1];            % Your divisor (must start/end with 1)
 
 ### Run Verilog Testbench
 ```bash
-iverilog -o crc_sim RTL/*.v TB/CRC_tb.v
+# Using Icarus Verilog
+iverilog -o crc_sim RTL/CRC_counter.v RTL/CRC.v TB/CRC_tb.v
 vvp crc_sim
+
+# OR use ModelSim, Vivado, Quartus - import RTL files and TB/CRC_tb.v then run simulation
 ```
 
 ### Change Input/Divisor/Bit Width
